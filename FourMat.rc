@@ -1,0 +1,1308 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어(대한민국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SEARCH_FORM DIALOGEX 0, 0, 233, 112
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    RTEXT           "포함 문자열 : ",IDC_STATIC_INCLUDESTR,24,19,41,8
+    EDITTEXT        IDC_EDIT_FILENAME,78,18,348,12,ES_AUTOHSCROLL
+    RTEXT           "위치 : ",IDC_STATIC_LOCATION,37,39,21,8
+    EDITTEXT        IDC_EDIT_FILELOCATION,78,36,348,14,ES_AUTOHSCROLL
+    CONTROL         "하위 폴더 검색",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,78,54,58,10
+    CONTROL         "",IDC_LIST_RESULT,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,6,72,421,174
+    PUSHBUTTON      "찾기",IDC_BUTTON_START,438,19,50,13
+END
+
+IDD_HISTORY_FORM DIALOGEX 0, 0, 524, 256
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_HISTORY,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,452,244
+    DEFPUSHBUTTON   "단일",IDOK,465,7,50,13
+    PUSHBUTTON      "다중",IDC_BUTTON_MULTI,465,28,50,14
+    PUSHBUTTON      "앨범",IDC_BUTTON_ALBUM,465,53,50,14
+END
+
+IDD_HISTORY_COMPARE DIALOGEX 0, 0, 493, 304
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_COMPARE_SLIDER,"msctls_trackbar32",TBS_BOTH | WS_TABSTOP,62,262,411,23
+    DEFPUSHBUTTON   "확인",IDOK,424,285,50,14
+END
+
+IDD_AFFINETRANSFORM_TRANSLATION DIALOGEX 0, 0, 413, 293
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Transformation"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "이동 크기 설정 ",IDC_STATIC,13,6,387,278
+    LTEXT           "원본 영상의 (0,0) 좌표를 아래 위치로 이동",IDC_STATIC,145,200,126,8
+    LTEXT           "x=",IDC_STATIC,121,221,10,8
+    EDITTEXT        IDC_NEW_SX,141,218,40,14,ES_AUTOHSCROLL
+    LTEXT           "y = ",IDC_STATIC,221,221,14,8
+    EDITTEXT        IDC_NEW_SY,248,218,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "확인",IDOK,336,270,50,14
+    PUSHBUTTON      "취소",IDCANCEL,274,270,50,14
+    PUSHBUTTON      "미리보기",IDC_PREVIEW,213,270,50,14
+    LTEXT           "->",IDC_STATIC,199,94,9,8
+END
+
+IDD_AFFINETRANSFORM_ROTATION DIALOGEX 0, 0, 446, 307
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Rotation"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "회전 각도 (시계 방향) ",IDC_STATIC,21,17,406,277
+    CONTROL         "90'",IDC_ROTATE90,"Button",BS_AUTORADIOBUTTON | WS_GROUP,151,194,26,10
+    CONTROL         "180'",IDC_ROTATE180,"Button",BS_AUTORADIOBUTTON,213,194,30,10
+    CONTROL         "270'",IDC_ROTATE270,"Button",BS_AUTORADIOBUTTON,271,194,30,10
+    CONTROL         "사용자 지정 : ",IDC_ROTATE_USER,"Button",BS_AUTORADIOBUTTON,149,222,57,10
+    EDITTEXT        IDC_ANGLE,212,220,40,14,ES_AUTOHSCROLL
+    LTEXT           "(0'~360') ",IDC_STATIC,261,223,34,8
+    PUSHBUTTON      "취소",IDCANCEL,318,281,49,13
+    DEFPUSHBUTTON   "확인",IDOK,371,281,44,13
+    PUSHBUTTON      "미리보기",IDC_PREVIEW,265,281,49,13
+    LTEXT           "->",IDC_STATIC,219,107,9,8
+END
+
+IDD_FILTERING_BRIGHTNESS DIALOGEX 0, 0, 438, 349
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "밝기 ",IDC_STATIC,76,166,265,56
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,92,183,231,15
+    EDITTEXT        IDC_BRIGHT_EDIT,192,205,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "대비",IDC_STATIC,78,234,265,51
+    CONTROL         "",IDC_CONTRAST_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,96,251,220,15
+    EDITTEXT        IDC_CONTRAST_EDIT,198,269,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "확인",IDOK,381,328,50,14
+    PUSHBUTTON      "취소",IDCANCEL,325,328,50,14
+    PUSHBUTTON      "미리보기",IDC_PREVIEW,269,328,50,14
+    GROUPBOX        "밝기/ 대비 조절 ",IDC_STATIC,11,13,420,329
+    LTEXT           "=>",IDC_STATIC,205,99,11,8
+END
+
+IDD_FILTERING_GAMMA DIALOGEX 0, 0, 428, 289
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "감마 설정 ",IDC_STATIC,14,12,394,257
+    CONTROL         "",IDC_GAMMA_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,98,184,247,15
+    EDITTEXT        IDC_GAMMA_EDIT,203,212,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "취소",IDCANCEL,293,255,50,14
+    DEFPUSHBUTTON   "확인",IDOK,350,255,50,14
+    PUSHBUTTON      "미리보기",IDC_PREVIEW,235,255,50,14
+    LTEXT           "=>",IDC_STATIC,209,103,11,8
+END
+
+IDD_HISTOGRAM DIALOGEX 0, 0, 404, 237
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,346,216,50,14
+END
+
+IDD_FEATUREEXTRACTION_BLUR DIALOGEX 0, 0, 404, 260
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gaussian"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "sigma 입력",IDC_STATIC,12,9,367,228
+    CONTROL         "",IDC_SIGMA_SLIDER,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,89,171,223,15
+    EDITTEXT        IDC_SIGMA_EDIT,187,196,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "취소",IDCANCEL,275,223,50,14
+    DEFPUSHBUTTON   "확인",IDOK,329,223,50,14
+    PUSHBUTTON      "미리보기",IDC_PREVIEW,219,223,50,14
+    LTEXT           "->",IDC_STATIC,194,90,9,8
+END
+
+IDD_AFFINETRANSFORM_SCALING DIALOGEX 0, 0, 262, 179
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "영상 크기 입력 ",IDC_STATIC,7,7,249,159
+    LTEXT           "가로크기(W) :",IDC_STATIC,29,37,51,11
+    LTEXT           "1000",IDC_OLD_WIDTH,97,37,26,11
+    LTEXT           "->",IDC_STATIC,136,37,26,11
+    EDITTEXT        IDC_NEW_WIDTH,156,37,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,201,37,12,14
+    LTEXT           "세로 크기(H) :",IDC_STATIC,30,59,45,11
+    LTEXT           "1000",IDC_OLD_HEIGHT,97,59,27,11
+    LTEXT           "->",IDC_STATIC,137,59,26,11
+    EDITTEXT        IDC_NEW_HEIGHT,157,57,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_HEIGHT,"msctls_updown32",UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,201,57,12,14
+    CONTROL         "원본영상의  가로/세로 비율 유지",IDC_ASPECT_RATIO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,82,110,10
+    LTEXT           "보간법 : ",IDC_STATIC,28,117,27,8
+    COMBOBOX        IDC_INTERPOLATION,81,116,123,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "취소",IDCANCEL,153,152,50,14
+    DEFPUSHBUTTON   "확인",IDOK,206,152,50,14
+END
+
+IDD_FEATUREEXTRACTION_REDUCENOISE DIALOGEX 0, 0, 400, 306
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Reduce Noise"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "계수 값 설정",IDC_STATIC,18,17,362,272
+    LTEXT           "Lambda(0 ~0.25) :",IDC_STATIC,100,185,62,13
+    EDITTEXT        IDC_DIFFUSION_LAMBDA,212,185,76,14,ES_AUTOHSCROLL
+    LTEXT           "K :",IDC_STATIC,100,208,62,13
+    EDITTEXT        IDC_DIFFUSION_K,212,209,76,14,ES_AUTOHSCROLL
+    LTEXT           "반복 횟수(I) : ",IDC_STATIC,100,235,62,13
+    EDITTEXT        IDC_DIFFUSION_ITER,212,232,76,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "취소",IDCANCEL,270,275,50,14
+    DEFPUSHBUTTON   "확인",IDOK,323,275,50,14
+    PUSHBUTTON      "미리보기",IDC_PREVIEW,217,275,50,14
+    LTEXT           "->",IDC_STATIC,193,95,9,8
+END
+
+IDD_FEATUREEXTRACTION_ADDNOISE DIALOGEX 0, 0, 451, 272
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Noise"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Noise 추가",IDC_STATIC,7,18,419,237
+    LTEXT           "=>",IDC_STATIC,223,96,11,8
+    CONTROL         "Gaussian",IDC_NOISE_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,166,183,45,10
+    CONTROL         "Salt n Pepper",IDC_NOISE_RADIO2,"Button",BS_AUTORADIOBUTTON,231,183,60,10
+    LTEXT           "잡음의 양 (A) : ",IDC_STATIC,162,208,47,8
+    EDITTEXT        IDC_NOISE_AMOUNT,217,206,53,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_AMOUNT,"msctls_updown32",UDS_ARROWKEYS,257,207,12,14
+    LTEXT           "%",IDC_STATIC,277,210,8,8
+    PUSHBUTTON      "취소",IDCANCEL,322,241,50,14
+    DEFPUSHBUTTON   "확인",IDOK,376,241,50,14
+    PUSHBUTTON      "미리보기",IDC_PREVIEW,269,241,50,14
+END
+
+IDD_FEATUREEXTRACTION_CANNY_EDGE DIALOGEX 0, 0, 424, 297
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edge Extract"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "계수값 설정",IDC_STATIC,18,10,382,265
+    LTEXT           "&Sigma for Gaussian:",IDC_STATIC,102,237,88,8
+    EDITTEXT        IDC_CANNY_SIGMA,197,181,89,14,ES_AUTOHSCROLL
+    LTEXT           "&Low Threshold:",IDC_STATIC,105,184,70,8
+    EDITTEXT        IDC_LOW_THRESHOLD,198,207,89,14,ES_AUTOHSCROLL
+    LTEXT           "&High Threshold:",IDC_STATIC,104,208,78,8
+    EDITTEXT        IDC_HIGH_THRESHOLD,197,234,89,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "취소",IDCANCEL,273,261,50,14
+    DEFPUSHBUTTON   "확인",IDOK,332,261,50,14
+    PUSHBUTTON      "미리보기",IDC_PREVIEW,215,261,50,14
+    LTEXT           "->",IDC_STATIC,210,95,9,8
+END
+
+IDD_FEATUREEXTRACTION_HARRIS_CORNER DIALOGEX 0, 0, 407, 258
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Corner Extract"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "임계값 설정 ",IDC_STATIC,25,21,365,219
+    LTEXT           "응답함수 임계값 : ",IDC_STATIC,102,182,79,8
+    EDITTEXT        IDC_HARRIS_THRESHOLD,194,179,85,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "취소",IDCANCEL,279,226,50,14
+    DEFPUSHBUTTON   "확인",IDOK,334,226,50,14
+    PUSHBUTTON      "미리보기",IDC_PREVIEW,222,226,50,14
+    LTEXT           "->",IDC_STATIC,204,93,9,8
+END
+
+IDD_HISTORY_ALBUM DIALOGEX 0, 0, 447, 308
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FOURMAT ALBUM"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,383,287,50,14
+    PUSHBUTTON      "취소",IDCANCEL,327,287,50,14
+    PUSHBUTTON      ">",IDC_BUTTON_RIGHT,414,105,26,36
+    PUSHBUTTON      "<",IDC_BUTTON_LEFT,7,105,26,36
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SEARCH_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+    END
+
+    IDD_HISTORY_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 515
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 251
+    END
+
+    IDD_HISTORY_COMPARE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 303
+    END
+
+    IDD_AFFINETRANSFORM_TRANSLATION, DIALOG
+    BEGIN
+        RIGHTMARGIN, 400
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 284
+    END
+
+    IDD_AFFINETRANSFORM_ROTATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 427
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+        HORZGUIDE, 293
+    END
+
+    IDD_FILTERING_BRIGHTNESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 431
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 342
+    END
+
+    IDD_FILTERING_GAMMA, DIALOG
+    BEGIN
+        LEFTMARGIN, 14
+        RIGHTMARGIN, 408
+        TOPMARGIN, 12
+        BOTTOMMARGIN, 269
+    END
+
+    IDD_HISTOGRAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 396
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 230
+    END
+
+    IDD_FEATUREEXTRACTION_BLUR, DIALOG
+    BEGIN
+        LEFTMARGIN, 12
+        RIGHTMARGIN, 379
+        TOPMARGIN, 9
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_AFFINETRANSFORM_SCALING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_FEATUREEXTRACTION_REDUCENOISE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 386
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 289
+    END
+
+    IDD_FEATUREEXTRACTION_ADDNOISE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 426
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 255
+    END
+
+    IDD_FEATUREEXTRACTION_CANNY_EDGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 10
+        RIGHTMARGIN, 400
+        TOPMARGIN, 10
+        BOTTOMMARGIN, 275
+    END
+
+    IDD_FEATUREEXTRACTION_HARRIS_CORNER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 398
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 240
+    END
+
+    IDD_HISTORY_ALBUM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 440
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 301
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_SEARCH_FORM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_HISTORY_FORM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_HISTORY_COMPARE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_AFFINETRANSFORM_TRANSLATION AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_AFFINETRANSFORM_ROTATION AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_FILTERING_BRIGHTNESS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_FILTERING_GAMMA AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_HISTOGRAM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_FEATUREEXTRACTION_BLUR AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_AFFINETRANSFORM_SCALING AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_FEATUREEXTRACTION_REDUCENOISE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_FEATUREEXTRACTION_ADDNOISE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_FEATUREEXTRACTION_CANNY_EDGE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_FEATUREEXTRACTION_HARRIS_CORNER AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_HISTORY_ALBUM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LIST                BITMAP                  "res\\IDB_LIST.BMP"
+
+IDB_BITMAP2             BITMAP                  "res\\explorer.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_AFFINETRANSFORM_SCALING DLGINIT
+BEGIN
+    IDC_INTERPOLATION, 0x403, 19, 0
+0xd6c3, 0xd9b1, 0xe6b9, 0xc020, 0xbfcc, 0x20f4, 0xb8ba, 0xa3b0, 0xfdb9, 
+"\000" 
+    IDC_INTERPOLATION, 0x403, 16, 0
+0xbe20, 0xbce7, 0xc7b1, 0x20fc, 0xb8ba, 0xa3b0, 0xb920, 0x00fd, 
+    IDC_INTERPOLATION, 0x403, 17, 0
+0x3320, 0xf7c2, 0xc820, 0xbcb8, 0x20b1, 0xb8ba, 0xa3b0, 0xfdb9, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_DRAWCLTYPE ACCELERATORS
+BEGIN
+    "S",            ID_OBJECT_SAVEDRAW,     VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_ACCELERATOR32896,    VIRTKEY, CONTROL, NOINVERT
+END
+
+#endif    // 한국어(대한민국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 영어(미국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 34, 22, 217, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About DrawClient"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "DrawClient Application Version 1.0",IDC_STATIC,40,10,119,8
+    LTEXT           "?2007 - 2008 Microsoft Corporation.  All rights reserved.",IDC_STATIC,40,25,122,19
+    DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+END
+
+IDD_PROP_RECT DIALOG 20, 20, 186, 93
+STYLE DS_SETFONT | DS_CONTEXTHELP | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Outline",IDC_STATIC,6,6,101,33
+    LTEXT           "Weight:",IDC_STATIC,11,20,27,8
+    EDITTEXT        IDC_WEIGHT,41,18,30,13,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,71,18,10,14
+    GROUPBOX        "Fill",IDC_STATIC,6,44,100,40
+    CONTROL         "None",IDC_NOFILL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,56,35,10
+END
+
+IDD_SUMM_PAGE DIALOGEX 0, 0, 184, 163
+STYLE DS_SETFONT | DS_CONTEXTHELP | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+CAPTION "Summary"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Application:",IDC_STATIC,7,7,38,8
+    LTEXT           "Static",IDC_APPNAME,46,7,119,8
+    LTEXT           "Author:",IDC_STATIC,7,23,24,8
+    EDITTEXT        IDC_AUTHOR,46,23,119,13,ES_AUTOHSCROLL
+    LTEXT           "Keywords:",IDC_STATIC,7,39,34,8
+    EDITTEXT        IDC_KEYWORDS,46,39,119,13,ES_AUTOHSCROLL
+    LTEXT           "Comments:",IDC_STATIC,7,55,36,8
+    EDITTEXT        IDC_COMMENTS,46,55,119,47,ES_MULTILINE | ES_WANTRETURN | WS_VSCROLL
+    LTEXT           "Title:",IDC_STATIC,7,105,16,8
+    EDITTEXT        IDC_TITLE,46,105,119,13,ES_AUTOHSCROLL
+    LTEXT           "Subject:",IDC_STATIC,7,121,27,8
+    EDITTEXT        IDC_SUBJECT,46,121,119,13,ES_AUTOHSCROLL
+    LTEXT           "Template:",IDC_STATIC,7,137,32,8
+    EDITTEXT        IDC_TEMPLATE,46,137,119,13,ES_AUTOHSCROLL
+END
+
+IDD_STAT_PAGE DIALOG 0, 0, 184, 161
+STYLE DS_SETFONT | DS_CONTEXTHELP | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+CAPTION "Statistics"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Last Saved By:",IDC_STATIC,7,13,49,8
+    LTEXT           "Static",IDC_SAVEDBY,72,13,84,8
+    LTEXT           "Revision number:",IDC_STATIC,7,27,56,8
+    LTEXT           "Total Editing Time:",IDC_STATIC,7,41,60,8
+    LTEXT           "Static",IDC_EDITTIME,72,41,84,8
+    LTEXT           "Last Printed:",IDC_STATIC,7,55,40,8
+    LTEXT           "Static",IDC_LASTPRINT,72,55,84,8
+    LTEXT           "Created:",IDC_STATIC,7,69,28,8
+    LTEXT           "Static",IDC_CREATEDATE,72,69,84,8
+    LTEXT           "Last Saved:",IDC_STATIC,7,83,39,8
+    LTEXT           "Static",IDC_LASTSAVE,72,83,84,8
+    LTEXT           "# Pages:",IDC_STATIC,7,97,30,8
+    LTEXT           "Static",IDC_NUMPAGES,72,97,32,8
+    LTEXT           "# words:",IDC_STATIC,7,111,28,8
+    LTEXT           "Static",IDC_NUMWORDS,72,111,32,8
+    LTEXT           "# chars:",IDC_STATIC,7,125,27,8
+    LTEXT           "Static",IDC_NUMCHARS,72,125,32,8
+    LTEXT           "Static",IDC_REVNUM,72,27,84,8
+    LTEXT           "Security Level:",IDC_STATIC,7,139,48,8
+    LTEXT           "Static",IDC_SECURITY,72,139,32,8
+END
+
+IDD_LINEWEIGHT DIALOG 0, 0, 160, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Line Weight"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Weight:",IDC_STATIC,7,17,27,8
+    EDITTEXT        IDC_WEIGHT,37,15,30,13,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,67,15,11,14
+    DEFPUSHBUTTON   "OK",IDOK,103,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,103,24,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+    END
+
+    IDD_PROP_RECT, DIALOG
+    BEGIN
+    END
+
+    IDD_SUMM_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 177
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_STAT_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 177
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 159
+    END
+
+    IDD_LINEWEIGHT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_SUMM_PAGE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_PROPERTIES          BITMAP                  "res\\prop24.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    VK_ESCAPE,      ID_CANCEL_EDIT,         VIRTKEY, NOINVERT
+    "E",            ID_DRAW_ELLIPSE,        ASCII,  NOINVERT
+    "e",            ID_DRAW_ELLIPSE,        ASCII,  NOINVERT
+    "L",            ID_DRAW_LINE,           ASCII,  NOINVERT
+    "l",            ID_DRAW_LINE,           ASCII,  NOINVERT
+    "R",            ID_DRAW_RECT,           ASCII,  NOINVERT
+    "r",            ID_DRAW_RECT,           ASCII,  NOINVERT
+    "N",            ID_DRAW_ROUNDRECT,      ASCII,  NOINVERT
+    "n",            ID_DRAW_ROUNDRECT,      ASCII,  NOINVERT
+    "s",            ID_DRAW_SELECT,         ASCII,  NOINVERT
+    VK_DELETE,      ID_EDIT_CLEAR,          VIRTKEY, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "A",            ID_EDIT_SELECT_ALL,     VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_OBJECT_SAVEDRAW,     VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    "-",            ID_OBJECT_MOVEBACK,     ASCII,  NOINVERT
+    VK_SUBTRACT,    ID_OBJECT_MOVEBACK,     VIRTKEY, NOINVERT
+    "=",            ID_OBJECT_MOVEFORWARD,  ASCII,  NOINVERT
+    VK_ADD,         ID_OBJECT_MOVEFORWARD,  VIRTKEY, NOINVERT
+    "_",            ID_OBJECT_MOVETOBACK,   ASCII,  NOINVERT
+    VK_SUBTRACT,    ID_OBJECT_MOVETOBACK,   VIRTKEY, CONTROL, NOINVERT
+    "+",            ID_OBJECT_MOVETOFRONT,  ASCII,  NOINVERT
+    VK_ADD,         ID_OBJECT_MOVETOFRONT,  VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "G",            ID_VIEW_GRID,           ASCII,  NOINVERT
+    "g",            ID_VIEW_GRID,           ASCII,  NOINVERT
+END
+
+IDR_DRAWCLTYPE_CNTR_IP ACCELERATORS
+BEGIN
+    VK_ESCAPE,      ID_CANCEL_EDIT,         VIRTKEY, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "S",            ID_OBJECT_SAVEDRAW,     VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_THEME_MENU MENU
+BEGIN
+    MENUITEM "&Blue Theme",                 ID_VIEW_APPLOOK_2007
+    MENUITEM "B&lack Theme",                ID_VIEW_APPLOOK_2007_1
+    MENUITEM "&Silver Theme",               ID_VIEW_APPLOOK_2007_2
+    MENUITEM "&Aqua Theme",                 ID_VIEW_APPLOOK_2007_3
+    MENUITEM "S&cenic Theme",               ID_VIEW_APPLOOK_SCENIC
+END
+
+IDR_WINDOWS_MENU MENU
+BEGIN
+    MENUITEM "&New Window",                 ID_WINDOW_NEW
+END
+
+IDR_POPUP_MDITABS MENU
+BEGIN
+    POPUP "DUMMY"
+    BEGIN
+        MENUITEM "&Save",                       ID_FILE_SAVE
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "New &Horizontal Tab Group",   32824
+        MENUITEM "New &Vertical Tab Group",     32825
+        MENUITEM "Move to Ne&xt Tab Group",     32826
+        MENUITEM "Move to P&revious Tab Group", 32827
+    END
+END
+
+IDR_POPUP_DROP_MDITABS MENU
+BEGIN
+    POPUP "DUMMY"
+    BEGIN
+        MENUITEM "New &Horizontal Tab Group",   ID_MDI_NEW_HORZ_TAB_GROUP
+        MENUITEM "New &Vertical Tab Group",     ID_MDI_NEW_VERT_GROUP
+        MENUITEM "Move to Ne&xt Tab Group",     ID_MDI_MOVE_TO_NEXT_GROUP
+        MENUITEM "Move to P&revious Tab Group", ID_MDI_MOVE_TO_PREV_GROUP
+        MENUITEM SEPARATOR
+        MENUITEM "&Cancel",                     32828
+    END
+END
+
+IDR_DRAWCLTYPE MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Sen&d...",                    ID_FILE_SEND_MAIL
+        MENUITEM "Summary &Info...",            ID_FILE_SUMMARYINFO
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM "&Delete\tDel",                ID_EDIT_CLEAR
+        MENUITEM "Select &All\tCtrl+A",         ID_EDIT_SELECT_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "Insert &New Object...",       ID_OLE_INSERT_NEW
+        MENUITEM "Lin&ks...",                   ID_OLE_EDIT_LINKS
+        MENUITEM "<<OLE VERBS GO HERE>>",       ID_OLE_VERB_FIRST
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Grid Lines\tG",              ID_VIEW_GRID
+        MENUITEM "&Paper Color...",             ID_VIEW_PAPERCOLOR
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Draw"
+    BEGIN
+        MENUITEM "&Select",                     ID_DRAW_SELECT
+        MENUITEM "&Line",                       ID_DRAW_LINE
+        MENUITEM "&Rectangle",                  ID_DRAW_RECT
+        MENUITEM "R&ound Rectangle",            ID_DRAW_ROUNDRECT
+        MENUITEM "&Ellipse",                    ID_DRAW_ELLIPSE
+        MENUITEM "&Polygon",                    ID_DRAW_POLYGON
+    END
+    POPUP "&Object"
+    BEGIN
+        MENUITEM "&Line Color...",              ID_OBJECT_LINECOLOR
+        MENUITEM "No Line",                     ID_OBJECT_NOLINE
+        MENUITEM "&Fill Color...",              ID_OBJECT_FILLCOLOR
+        MENUITEM "No Fill",                     ID_OBJECT_NOFILL
+        POPUP "Line Weight"
+        BEGIN
+            MENUITEM "Line Weight",                 ID_OBJECT_LINEWEIGHT
+            MENUITEM SEPARATOR
+            MENUITEM "More &Lines...",              ID_OBJECT_LINEWEIGHT_MORE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Styles",                     ID_OBJECT_STYLES
+        MENUITEM "&Properties...",              ID_OBJECT_PROPERTIES
+        MENUITEM SEPARATOR
+        MENUITEM "Move To Front\tCtrl+Plus",    ID_OBJECT_MOVETOFRONT
+        MENUITEM "Move To Back\tCtrl+Minus",    ID_OBJECT_MOVETOBACK
+        MENUITEM "Move Forward\tPlus",          ID_OBJECT_MOVEFORWARD
+        MENUITEM "Move Back\tMinus",            ID_OBJECT_MOVEBACK
+        MENUITEM SEPARATOR
+        MENUITEM "Save Draw",                   ID_OBJECT_SAVEDRAW
+        MENUITEM "Reset Draw",                  ID_OBJECT_RESETDRAW
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+        MENUITEM "&Windows...",                 ID_WINDOW_MANAGER
+    END
+    POPUP "&ImageProcessing"
+    BEGIN
+        POPUP "&Affine Transform"
+        BEGIN
+            MENUITEM "&Rotation",                   ID_AFFINETRANFORM_ROTATION
+            MENUITEM "&Translation",                ID_AFFINETRANFORM_TRANSLATION
+            MENUITEM "&Scaling",                    ID_AFFINETRANFORM_SCALING
+            MENUITEM "&Mirror",                     ID_AFFINETRANFORM_MIRROR
+            MENUITEM "&Flip",                       ID_AFFINETRANSFORM_FLIP
+        END
+        POPUP "&Filtering"
+        BEGIN
+            MENUITEM "&Brightness",                 ID_FILTERING_BRIGHTNESS
+            MENUITEM "&Inverse",                    ID_FILTERING_INVERSE
+            MENUITEM "&Gamma",                      ID_FILTERING_GAMMA
+            MENUITEM "&Histogram",                  ID_FILTERING_HISTOGRAM
+            MENUITEM "&Histogram Equalization",     ID_FEATUREEXTRACTION_HISTOGRAMEQUALIZATION
+            MENUITEM "&Histogram Stretching ",      ID_FEATUREEXTRACTION_HISTOGRAMSTRETCHING
+        END
+        POPUP "&FeatureExtraction"
+        BEGIN
+            MENUITEM "&Blur",                       ID_FEATUREEXTRACTION_BLUR
+            MENUITEM "&Sharpening",                 ID_FEATUREEXTRACTION_SHARPENING
+            MENUITEM "&Add Noise",                  ID_FEATUREEXTRACTION_ADDNOISE
+            MENUITEM "&Reduce Noise",               ID_FEATUREEXTRACTION_REDUCENOISE
+            MENUITEM "&Canny Edge",                 ID_FEATUREEXTRACTION_CANNYEDGE
+            MENUITEM "&Harris Corner",              ID_FEATUREEXTRACTION_HARRISCORNER
+        END
+        POPUP "&Morphology"
+        BEGIN
+            MENUITEM "&Erosion",                    ID_MOLPHOLOGY_EROSION
+            MENUITEM "&Dilation",                   ID_MOLPHOLOGY_DILATION
+            MENUITEM "&Opening",                    ID_MOLPHOLOGY_OPENING
+            MENUITEM "&Closing",                    ID_MOLPHOLOGY_CLOSING
+        END
+        POPUP "&Compare"
+        BEGIN
+            MENUITEM "Compare",                     ID_COMPARE_COMPARE
+        END
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About DrawClient...",        ID_APP_ABOUT
+    END
+END
+
+IDR_DRAWCLTYPE_CNTR_IP MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Sen&d...",                    ID_FILE_SEND_MAIL
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    MENUITEM SEPARATOR
+    MENUITEM SEPARATOR
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+END
+
+ID_POPUP_MENU MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Delete\tDel",                ID_EDIT_CLEAR
+        MENUITEM SEPARATOR
+        MENUITEM "Object...",                   ID_OLE_VERB_FIRST
+    END
+END
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About DrawClient...",        ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_PROPERTIES TOOLBAR 16, 16
+BEGIN
+    BUTTON      ID_EXPAND
+    BUTTON      ID_SORTINGGROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_RIBBON_HOMELARGE    PNG                     "res\\homelarge.png"
+
+IDB_RIBBON_HOMESMALL    PNG                     "res\\homesmall.png"
+
+IDB_RIBBON_VIEWSMALL    PNG                     "res\\viewsmall.png"
+
+IDB_RIBBON_VIEWLARGE    PNG                     "res\\viewlarge.png"
+
+IDB_RIBBON_FILELARGE    PNG                     "res\\filelarge.png"
+
+IDB_RIBBON_FILESMALL    PNG                     "res\\filesmall.png"
+
+IDB_RIBBON_FORMATLARGE  PNG                     "res\\formatlarge.png"
+
+IDB_RIBBON_FORMATSMALL  PNG                     "res\\formatsmall.png"
+
+IDB_RIBBON_MAIN         PNG                     "res\\main.bmp"
+
+IDB_RIBBON_ICONS        PNG                     "res\\ribbonicons.png"
+
+IDB_STATUSBAR_1         PNG                     "res\\sb_1.png"
+
+IDB_STATUSBAR_2         PNG                     "res\\sb_2.png"
+
+IDB_LINEWEIGHT          PNG                     "res\\lineweight.png"
+
+IDB_STYLES              PNG                     "res\\styles.png"
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\FourMat.rc2""  // non-App Studio edited resources\r\n"
+    "\r\n"
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "#include ""afxprint.rc""  // printing/print preview resources\r\n"
+    "#if !defined(_AFXDLL)\r\n"
+    "#include ""afxribbon.rc"" // ribbon and control bar resources\r\n"
+    "#endif\r\n"
+    "#include ""afxolecl.rc""  // OLE container resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "RES\\FourMat.ICO"
+
+IDR_DRAWCLTYPE          ICON                    "RES\\DRAWDOC.ICO"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_PENCIL              CURSOR                  "RES\\PENCIL.CUR"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "DRAWCLIENT MFC Application"
+            VALUE "FileVersion", "1.0.001"
+            VALUE "InternalName", "DRAWCLIENT"
+            VALUE "LegalCopyright", "?Microsoft Corporation.  All rights reserved."
+            VALUE "OriginalFilename", "DRAWCLIENT.EXE"
+            VALUE "ProductName", "DRAWCLIENT Application"
+            VALUE "ProductVersion", "1.0.001"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_APPLOOK_2007    "Activate Office 2007 (Blue) application look\nOffice 2007 Look (Blue)"
+    ID_VIEW_APPLOOK_2007_1  "Activate Office 2007 (Black) application look\nOffice 2007 Look (Black)"
+    ID_VIEW_APPLOOK_2007_2  "Activate Office 2007 (Silver) application look\nOffice 2007 Look (Silver)"
+    ID_VIEW_APPLOOK_2007_3  "Activate Office 2007 (Aqua) application look\nOffice 2007 Look (Aqua)"
+    ID_VIEW_APPLOOK_SCENIC  "Activate Scenic (Windows 7) application look\nScenic Look (Windows 7)"
+    ID_NEWWINDOW            "Open another window for the active document\nNew Window"
+    ID_EXPAND               "\nCategorized"
+    ID_SORTINGGROUP         "\nAlphabetical"
+    ID_STATUSBAR_PANE_OBJECTCOUNT "Total Number Of Objects\nObject Count"
+END
+
+STRINGTABLE
+BEGIN
+    IDP_BUSY                "Server is still busy."
+    IDP_OLE_INIT_FAILED     "OLE 2.0 initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDP_FAILED_TO_CREATE    "Failed to create object.  Make sure the object is entered in the system registry."
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "DrawClient Application"
+    IDR_DRAWCLTYPE          "\nDrawClient\nDrawClient Document\nDrawClient Files (*.drw)\n.drw\nDrawClient.Document\nDrawClient Document\nDCLI\nDrawClient Files"
+END
+
+STRINGTABLE
+BEGIN
+    ID_STATUSBAR_PANE_SELECTEDOBJECTCOUNT 
+                            "Total Number of Selected Objects\nSelected Object Count"
+    ID_TOOLS_OPTIONS        "Changes application options\nOptions"
+    ID_OBJECT_NOFILL        "\nNo Fill"
+    ID_OBJECT_LINEWEIGHT    "Change the line weight\nLine Weight"
+    ID_OBJECT_LINEWEIGHT_MORE 
+                            "Launch dialog box to specify line weight\nMore Lines"
+    ID_OBJECT_PROPERTIES    "Show the Colors and Lines dialog box\nAdvanced Tools"
+    ID_OBJECT_NOLINE        "\nNo Line"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "DrawClient Application"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_DIRECT    "Send the document directly to the default printer without making changes.\nQuick Print"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+    ID_FILE_SEND_MAIL       "Send the active document through electronic mail\nSend Mail"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompt to save documents\nExit"
+    ID_CONTEXT_HELP         "Display help for clicked-on buttons, menus and windows\nHelp mode"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_PASTE_LINK      "Insert Clipboard contents and a link to its source\nPaste Link"
+    ID_EDIT_PASTE_SPECIAL   "Insert Clipboard contents with options\nPaste Special"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE
+BEGIN
+    ID_OLE_INSERT_NEW       "Insert new linked or embedded object\nNew Object"
+    ID_OLE_EDIT_LINKS       "Edit linked objects\nEdit Links"
+    ID_OLE_EDIT_CONVERT     "Convert object to different type\nConvert Object"
+END
+
+STRINGTABLE
+BEGIN
+    ID_OLE_VERB_FIRST       "Activate embedded or linked object"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompt to save the documents"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_GRID            "Show or hide gridlines\nToggle Gridlines"
+    ID_DRAW_SELECT          "Choose object selection tool\nSelection Tool"
+    ID_DRAW_LINE            "Choose line drawing tool\nLine Tool"
+    ID_DRAW_RECT            "Choose rectangle drawing tool\nRectangle Tool"
+    ID_DRAW_ROUNDRECT       "Choose rounded rectangle drawing tool\nRoundRect Tool"
+    ID_DRAW_ELLIPSE         "Choose ellipse drawing tool\nEllipse Tool"
+    ID_OBJECT_LINECOLOR     "Change the line or text color\nLine Color"
+    ID_OBJECT_FILLCOLOR     "Change the fill or background color\nFill Color"
+    ID_OBJECT_MOVETOFRONT   "Move object to front of drawing\nMove to Front"
+    ID_OBJECT_MOVETOBACK    "Move object to back of drawing\nMove to Back"
+    ID_OBJECT_MOVEFORWARD   "Move object to next position in z-order\nMove Forward"
+    ID_OBJECT_MOVEBACK      "Move object to previous position in z-order\nMove Backward"
+    ID_VIEW_PAPERCOLOR      "Change paper color displayed while editing\nPaper Color"
+    ID_DRAW_POLYGON         "Choose the polygon drawing tool\nPolygon Tool"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_SUMMARYINFO     "Display summary information\nSummary Info"
+    ID_WINDOWS_MENU         "Switch to a different currently open window\nSwitch Windows"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_MANAGER       "Show Windows dialog to manage opend windows\nManage opened windows"
+END
+
+#endif    // 영어(미국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\FourMat.rc2"  // non-App Studio edited resources
+
+#include "afxres.rc"  // Standard components
+#include "afxprint.rc"  // printing/print preview resources
+#if !defined(_AFXDLL)
+#include "afxribbon.rc" // ribbon and control bar resources
+#endif
+#include "afxolecl.rc"  // OLE container resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
